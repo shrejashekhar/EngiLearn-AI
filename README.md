@@ -1,61 +1,132 @@
-EngiMentor AI is an AI-powered instructor system designed to support college students in learning technical and engineering subjects more effectively. Built using Large Language Models (LLMs) and the LangChain framework, the system follows a multi-agent approach inspired by CAMEL architecture.
 
-The project addresses a common challenge faced by college students: the lack of personalized guidance and structured learning paths when studying complex subjects. Instead of relying on generic resources, EngiMentor AI uses two collaborating AI agents to analyze a student’s learning goals and automatically generate a well-structured syllabus. A dedicated instructor agent then teaches the content step by step based on this syllabus.
 
-By combining collaborative syllabus generation with adaptive instruction, the system provides a personalized, interactive, and self-paced learning experience, helping students understand topics more clearly and study more efficiently.
+# **EngiMentor AI**
 
-The EngiMentor AI project explores a modern approach to learning by integrating artificial intelligence into the educational process. Instead of static content delivery, the system employs multiple AI agents that collaboratively analyze a learner’s objectives and generate a structured learning plan.
+**EngiMentor AI** is an AI-powered instructor system designed to help college students learn technical and engineering subjects more effectively. Built using **Large Language Models (LLMs)** and the **LangChain framework**, the system follows a **multi-agent architecture inspired by CAMEL**, enabling collaborative reasoning and adaptive instruction.
 
-Two AI agents simulate a discussion to design a customized syllabus based on the user’s intended learning outcomes. After the syllabus is finalized, a separate AI agent takes on the role of an instructor and delivers lessons according to the generated structure.
+The project tackles a common challenge faced by students: the absence of personalized guidance and structured learning paths when studying complex topics. Instead of relying on generic learning resources, EngiMentor AI dynamically generates a customized syllabus and delivers step-by-step instruction tailored to individual learning goals.
 
-This approach aims to create a more personalized, adaptive, and interactive learning experience.
+---
+flowchart TD
+    U[User / Student] -->|Learning Goal / Topic| UI[User Interface / CLI]
 
-Key Features
+    UI --> P[Prompt Processing Layer]
 
--Collaborative Agent-Based Syllabus Design
-Two role-based AI agents engage in a guided discussion to analyze the user’s learning goals and create a well-structured syllabus.
+    P --> A1[Syllabus Agent 1\n(Concept Planner)]
+    P --> A2[Syllabus Agent 2\n(Structure Designer)]
 
--Adaptive Teaching Agent
-A dedicated instructor agent adjusts its teaching strategy and pace to align with the learner’s needs and preferences.
+    A1 <-->|Collaborative Dialogue| A2
 
--Interactive Learning Experience
-The system enables continuous interaction between the learner and the instructor agent, supported by natural language understanding and reasoning capabilities.
+    A1 -->|Agent Reasoning| LLM[Large Language Model]
+    A2 -->|Agent Reasoning| LLM
 
-System Architecture
+    LLM --> S[Syllabus Generator]
 
-The overall workflow of the system can be summarized as follows:
+    S --> IA[Instructor Agent]
 
-1. Agent Initialization
-Multiple AI agents are initialized with predefined roles and domain knowledge.
+    IA -->|Step-by-step Teaching\nAdaptive Explanations| UI
 
-2. Understanding User Input
-When the user specifies a topic or learning objective, the system processes this input through carefully designed prompts.
+    UI -->|Questions / Feedback| IA
 
-3. Agent Collaboration and Dialogue
-Two AI agents interact with each other, exchanging ideas and reasoning collaboratively to outline relevant concepts and organize them logically.
+## **Problem Statement**
 
-4. Syllabus Creation
-Using the conversation history between the two agents, a Large Language Model generates a comprehensive and structured syllabus that aligns with the user’s goals.
+Many college students struggle with:
 
-5. Instructor Agent Activation
-After the syllabus is finalized, an instructor agent takes responsibility for guiding the learner through the content, following the generated syllabus.
+* Unstructured learning resources
+* Lack of personalized mentorship
+* Difficulty breaking down complex technical subjects
 
-Through this multi-agent collaboration and adaptive instruction mechanism, the system delivers a dynamic and personalized educational experience.
+Traditional learning platforms often provide static content that does not adapt to a learner’s pace or objectives. **EngiMentor AI bridges this gap by acting as a personalized AI instructor**, guiding students through a structured and interactive learning journey.
 
-Installation
+---
 
-Ensure that Python 3.10 or later is installed.
-To set up the virtual environment, run:
+## **Solution Overview**
 
+EngiMentor AI employs a **multi-agent collaboration model** where:
+
+* Two AI agents work together to analyze a student’s learning objectives and design a customized syllabus.
+* A dedicated instructor agent then teaches the content in a logical, step-by-step manner based on the generated syllabus.
+
+This approach enables **personalized, adaptive, and self-paced learning**, making complex topics easier to understand and retain.
+
+---
+
+## **Key Features**
+
+### **Collaborative Agent-Based Syllabus Design**
+
+Two role-based AI agents engage in a guided discussion to analyze the learner’s goals and generate a well-structured, goal-aligned syllabus.
+
+### **Adaptive Instructor Agent**
+
+A dedicated instructor agent delivers lessons according to the generated syllabus, adjusting its explanations and pace based on the learner’s needs.
+
+### **Interactive Learning Experience**
+
+Learners can continuously interact with the instructor agent, ask questions, and receive clear explanations supported by natural language reasoning.
+
+---
+
+## **System Architecture**
+
+The system follows a structured multi-agent workflow:
+
+1. **Agent Initialization**
+   Multiple AI agents are initialized with predefined roles, responsibilities, and domain knowledge.
+
+2. **Understanding User Input**
+   The system processes the user’s topic or learning objective using carefully designed prompts.
+
+3. **Agent Collaboration & Dialogue**
+   Two AI agents interact and reason collaboratively to identify key concepts and organize them logically.
+
+4. **Syllabus Generation**
+   A Large Language Model generates a comprehensive, structured syllabus based on the agents’ conversation and the learner’s goals.
+
+5. **Instructor Agent Activation**
+   Once the syllabus is finalized, an instructor agent guides the learner through the content step by step.
+
+Through this multi-agent collaboration and adaptive teaching mechanism, EngiMentor AI delivers a dynamic and personalized educational experience.
+
+---
+
+## **Tech Stack**
+
+* **Large Language Models (LLMs)**
+* **LangChain**
+* **Multi-Agent Systems (CAMEL-inspired architecture)**
+* **Python**
+* **OpenAI API**
+
+---
+
+## **Installation**
+
+Ensure **Python 3.10 or later** is installed.
+
+Create and activate a virtual environment:
+
+```bash
 make venv
+```
 
+Create a `.env` file in the project root and add your OpenAI API key:
 
-Next, create a .env file in the root directory and add your OpenAI API key:
-
+```env
 OPENAI_API_KEY=sk-xxxx
+```
 
-Usage
+---
 
-To start the AI Instructor system, execute:
+## **Usage**
 
+To start the AI Instructor system, run:
+
+```bash
 python src/run.py
+```
+
+---
+
+
+
