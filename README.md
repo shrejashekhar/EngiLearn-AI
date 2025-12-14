@@ -7,26 +7,6 @@
 The project tackles a common challenge faced by students: the absence of personalized guidance and structured learning paths when studying complex topics. Instead of relying on generic learning resources, EngiMentor AI dynamically generates a customized syllabus and delivers step-by-step instruction tailored to individual learning goals.
 
 ---
-flowchart TD
-    U[User / Student] -->|Learning Goal / Topic| UI[User Interface / CLI]
-
-    UI --> P[Prompt Processing Layer]
-
-    P --> A1[Syllabus Agent 1\n(Concept Planner)]
-    P --> A2[Syllabus Agent 2\n(Structure Designer)]
-
-    A1 <-->|Collaborative Dialogue| A2
-
-    A1 -->|Agent Reasoning| LLM[Large Language Model]
-    A2 -->|Agent Reasoning| LLM
-
-    LLM --> S[Syllabus Generator]
-
-    S --> IA[Instructor Agent]
-
-    IA -->|Step-by-step Teaching\nAdaptive Explanations| UI
-
-    UI -->|Questions / Feedback| IA
 
 ## **Problem Statement**
 
