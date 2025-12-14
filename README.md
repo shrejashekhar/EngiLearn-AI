@@ -54,7 +54,7 @@ Next, create a .env file in the root directory and add your OpenAI API key:
 
 OPENAI_API_KEY=sk-xxxx
 
-▶ Usage
+Usage
 
 To start the AI Instructor system, execute:
 
