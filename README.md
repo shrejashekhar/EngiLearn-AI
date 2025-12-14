@@ -77,6 +77,7 @@ Through this multi-agent collaboration and adaptive teaching mechanism, EngiMent
 * **Multi-Agent Systems (CAMEL-inspired architecture)**
 * **Python**
 * **OpenAI API**
+* **GPT 3.5 sonet**
 
 ---
 
